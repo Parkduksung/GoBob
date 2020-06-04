@@ -1,0 +1,2 @@
+rootProject.name='GoBob'
+include ':app'
