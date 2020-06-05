@@ -8,9 +8,7 @@ import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface KAKAOLocalApi {
-
     //x - longitude , y - latitude
-
     @Headers(HEADERS)
     @GET("v2/local/search/category.json")
     fun getSearchForCategory(
@@ -22,7 +20,7 @@ interface KAKAOLocalApi {
     ): Call<KAKAOSearchCategoryResponse>
 
     @Headers(HEADERS)
-    @GET("v2/local/search/category.json")
+    @GET("v2/local/geo/coord2address.json")
     fun getSearchForAddress(
         @Query("x") x: Double,
         @Query("y") y: Double

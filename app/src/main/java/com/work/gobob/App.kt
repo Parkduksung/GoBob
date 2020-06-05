@@ -5,6 +5,7 @@ import android.content.Context
 import com.work.gobob.data.di.repositoryModule
 import com.work.gobob.data.di.sourceModule
 import com.work.gobob.network.di.networkModule
+import com.work.gobob.util.SharedPreferences
 import com.work.gobob.viewmodel.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -14,9 +15,11 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
-        startKOIN()
+        prefs = SharedPreferences(applicationContext)
+        setUpKoin()
     }
-    private fun startKOIN() {
+
+    private fun setUpKoin() {
         startKoin {
             androidContext(this@App)
             modules(
@@ -35,5 +38,6 @@ class App : Application() {
     companion object {
         lateinit var instance: App
             private set
+        lateinit var prefs: SharedPreferences
     }
 }

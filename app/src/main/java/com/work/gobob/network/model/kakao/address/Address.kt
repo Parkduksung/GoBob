@@ -16,5 +16,7 @@ data class Address(
     @SerializedName("region_3depth_name")
     val region3depthName: String,
     @SerializedName("sub_address_no")
-    val subAddressNo: String
+    val subAddressNo: String,
+    @SerializedName("zip_code")
+    val zipCode: String
 )
